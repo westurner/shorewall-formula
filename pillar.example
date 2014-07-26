@@ -1,0 +1,10 @@
+shorewall::
+  lookup:
+    master: shorewall-master
+
+  interfaces:
+    eth0:
+        zone: net
+        interface: eth0
+        broadcast: '-'
+        option: '-'

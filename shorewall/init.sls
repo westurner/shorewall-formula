@@ -41,7 +41,7 @@ shorewall:
     - require:
       - file: /etc/shorewall
     # Restart shorewall when config files change
-    - watch_in:
+    - onchanges:
       - service: shorewall
 {% endfor %}
 
@@ -75,7 +75,7 @@ shorewall6:
     - template: jinja
     - context: {{ salt['pillar.get']('shorewall') }}
     - require:
-      - file: /etc/shorewall
-    - watch_in:
+      - file: /etc/shorewall6
+    - onchanges:
       - service: shorewall
 {% endfor %}
